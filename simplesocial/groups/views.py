@@ -1,11 +1,15 @@
 from django.shortcuts import render
 from django.contrib import messages
-from django.contrib.mixins import (LoginRequiredMixin, PermissionRequiredMixin)
-from django.core.urlresolvers import reverse
+from django.contrib.auth.mixins import (LoginRequiredMixin, PermissionRequiredMixin)
+from django.urls import reverse
 from django.views import generic
 from groups.models import Group,GroupMember
-from django.shortcuts import Group,GroupMember
+#from django.shortcuts import Group,GroupMember
+from . import models
+from django.db import IntegrityError
 
+
+#from django.views.generic import  CreateView
 
 class CreateGroup(LoginRequiredMixin,generic,CreateView):
     fields = ('name','description')

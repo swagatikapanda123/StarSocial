@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 #from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 from django.views import generic
 from django.http import Http404
 from braces.views import SelectRelatedMixin
